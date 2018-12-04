@@ -1,2 +1,4 @@
 # TweePy_pract
-my practice stuff regarding Tweepy. 
+My practice stuff regarding Tweepy. 
+
+Tweepy is interesting and amazing python library for twitter. 
