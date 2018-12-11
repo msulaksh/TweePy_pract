@@ -1,0 +1,6 @@
+After I had tweets stored in mongodb, I started working on filtering those tweets.
+Firstly, I started with simple db.find() command.
+
+db.twitter_search.find({'entities.user_mentions.name':"Karl Smith"})         # check for different quotation marks used for Key and value.
+									                                                           # with this working, add .count() and .pretty() 
+                       
