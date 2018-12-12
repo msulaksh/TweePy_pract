@@ -2,6 +2,10 @@ After I had tweets stored in mongodb, I started working on filtering those tweet
 Firstly, I started with simple db.find() command.
 
 db.twitter_search.find({'entities.user_mentions.name':"Karl Smith"})         # check for different quotation marks used for Key and value.
-    		                                                             # with this working, add .count() and .pretty() 
+    		                                                                 # with this working, add .count() and .pretty() 
                        
-db.twitter_search.find({'entities.hashtags.text':"Crypto"})   		     #tweets with hashtag "Crypto"
+db.twitter_search.find({'entities.hashtags.text':"Crypto"})   		         #tweets with hashtag "Crypto"
+NOW SEARCH FOR MULTIPLE hashtags,
+db.twitter_search.find({'entities.hashtags.text':"Crypto"}, {'entities.hashtags.text':"IoT"})			
+                                                                             #multiple hashtags in single search
+
