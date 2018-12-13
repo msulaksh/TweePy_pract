@@ -9,3 +9,4 @@ NOW SEARCH FOR MULTIPLE hashtags,
 db.twitter_search.find({'entities.hashtags.text':"Crypto"}, {'entities.hashtags.text':"IoT"})			
                                                                              #multiple hashtags in single search
 
+db.twitter_search.find({'retweeted':false})
