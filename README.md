@@ -1,7 +1,7 @@
 # TweePy_pract
 My practice stuff regarding Tweepy. 
 
-Tweepy is interesting and amazing python library for twitter. 
+Tweepy is interesting and amazing python library for accessing twitter API. 
 
 A while ago I used TextBlob for Tweet sentiment analysis, where i didnt save any tweet in DB.
 
