@@ -5,7 +5,7 @@ from pymongo import MongoClient
  
 MONGO_HOST= 'mongodb://localhost/twitterdb'  
  
-WORDS = ['#bigdata', '#AI', '#datascience', '#machinelearning', '#iot']
+WORDS = ['#bigdata', '#hadoop', '#AI', '#datascience', '#machinelearning', '#iot']
  
 CONSUMER_KEY = "KEY"
 CONSUMER_SECRET = "SECRET"
