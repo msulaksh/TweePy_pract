@@ -1,1 +1,10 @@
+Here is a basic aggregation pipeline for filtering tweets
 
+db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1}})   
+                                     #project command will show us User_mentions part, which has screen_name, Name, ID included.
+
+db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1},{$unwind:"$entities.user_mentions"}})  
+                                     # seperate the result of $project
+                                     
+{ $group : { _id: "$entities.user_mentions.screen_name",count: { $sum : 1 }}}
+                                    # Now use $group to group values from multiple documents
