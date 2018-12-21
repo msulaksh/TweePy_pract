@@ -14,4 +14,5 @@ Now lets use Aggregate to Filter tweets based on Language:
 db.allTweets.aggregate([{$group:{_id:'$lang',count:{$sum:1}}}]);
                         						#aggregate every tweet and group count per language.
                                     #This command will simple group all tweets by languages and gives us the count of tweets per language
-  
+
+Adding, {$sort: {count: -1}} will give us a sorted output.
