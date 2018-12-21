@@ -1,17 +1,16 @@
 Here is a basic aggregation pipeline for filtering tweets
 
-db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1}})   
+1. db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1}})   
                                      #project command will show us User_mentions part, which has screen_name, Name, ID included.
 
-db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1},{$unwind:"$entities.user_mentions"}})  
+2. db.twitter_search_new.aggregate({$project:{_id:0, "entities.usr_mentions":1},{$unwind:"$entities.user_mentions"}})  
                                      # seperate the result of $project
                                      
-{ $group : { _id: "$entities.user_mentions.screen_name",count: { $sum : 1 }}}
+3. { $group : { _id: "$entities.user_mentions.screen_name",count: { $sum : 1 }}}
                                     # Now use $group to group values from multiple documents
                                     
 Now lets use Aggregate to Filter tweets based on Language:
-
-db.allTweets.aggregate([{$group:{_id:'$lang',count:{$sum:1}}}]);
+4. db.allTweets.aggregate([{$group:{_id:'$lang',count:{$sum:1}}}]);
                         						#aggregate every tweet and group count per language.
                                     #This command will simple group all tweets by languages and gives us the count of tweets per language
 
